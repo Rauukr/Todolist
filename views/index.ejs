@@ -1,0 +1,50 @@
+<%- include("header.ejs") %>
+
+<header>
+    <nav class="navbar navbar-expand-custom navbar-mainbg ">
+  
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+  
+          <li class="nav-item">
+            <a class="nav-link" href="/"><i class="far fa-calendar-alt"></i>Today</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/work"><i class="far fa-clone"></i>Work</a>
+          </li>
+  
+  
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+  <body>
+    <main>  <div class="box" id="heading">
+      <h1>
+       <%= kindOfDay %> 
+      </h1>
+    </div>
+    <% for( i = 0; i< newListItem.length; i++){ %>
+        <div class="box">
+          
+           
+        <div class="item">
+          <input type="checkbox" name="checkbox">
+      <ul>
+          <li >
+              <%= newListItem[i] %> 
+            </li>
+     </ul>    
+        </div>
+    </div>
+  
+    <%  } %>
+  
+    <form class="item boxs" action="/" method="post">
+      <input type="text" name="newItem" placeholder="New Item" autocomplete="off" />
+      <button type="submit" name="list" value=Friday, August 4 >+</button>
+    </form>
+</div>
+
+<%- include("footer.ejs") %>
